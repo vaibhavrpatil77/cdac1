@@ -1,0 +1,157 @@
+1) write a function to accept a number and return its square using
+	a) normal function
+	b) lambda
+
+def sqr( num) :
+    return num*num
+num1=int(input("Enter a number"))
+num2= sqr(num1)
+print(num2)
+
+square=lambda  x:[print(x*x)]
+num3=int(input("Enter a number"))
+square(num3)
+
+2) write a function to display "Hello World" using
+	a) normal function
+	b) lambda
+def hello(h):
+    print(h)
+hello("hello")
+h1=lambda y: print(y)
+h1("hello")
+
+3) write a function with 2 arguments , second argument should be "default argument" and display them. Using
+	a) normal function 
+	b) lambda
+
+def fun1(a,b=10):
+    print(a,b)
+fun1(10,20)
+fun1(40)
+fun2=lambda x,y=10 : [print(x,y)]
+fun2(10,20)
+fun2(40)
+
+4) write a function with variable no. of arguments and display them. Using
+	a) normal function
+	b) lambda
+def fun1(*a):
+    for i in a:
+        print(i)
+fun1(10,20)
+fun1(40)
+fun1("patil","shinde",10,20,30,'A')
+fun2=lambda *b:[ print (i) for i in b]
+fun2(10,20)
+fun2(40)
+fun2("patil","shinde",10,20,30,'A')
+
+Part 2: List 
+1) create a list , accept a number,name and a float value from user and store it inside the list.
+  
+now accept one more name from user and insert it at 2nd position.
+
+accept a number and append it at the end of the list.
+print the entire list.
+mylist=[]
+number=int(input("Enter a number"))
+mylist.append(number)
+f=float(input("Enter a number"))
+mylist.append(f)
+name=input("Enter a name")
+mylist.append(name)
+name1=input("Enter another name")
+mylist.insert(2,name1)
+num2=int(input("Enter a number"))
+mylist.append(num2)
+print(mylist)
+
+2) first create list empty. accept numbers till user enters 0 and store them inside the list. Print the list and its length.
+mylist=[]
+while(True):
+    number=int(input("Enter a number"))
+    if(number==0):
+        break;
+    else:
+     mylist.append(number)
+
+print(mylist)
+print(len(mylist))
+
+3) accept 5 numbers, store them inside the list and display it. Now add 3 more numbers [hardcoded] at the end of the list using "extend" method.
+mylist=[]
+for i in range(0,5):
+    number=int(input("Enter a number"))
+    mylist.append(number)
+print(mylist)
+mylist.extend((10,20,30))
+print(mylist)
+
+4)accept a number,string,decimal,boolean value and a character from the user and store it inside the
+ list. First print the list from the beginning and then from the end.
+
+number=int(input("Enter a number"))
+b=bool(input("Enter a boolean value"))
+c=(input("Enter a character"))
+mylist=[number,b,c]
+print(mylist)
+var=-1
+while(var>=-3):
+    print(mylist[var])
+    var-=1
+5) accept 5 numbers, store them inside the list. now accept
+ a number from user which he would like to remove from the list and  after removing it, display the list.
+
+mylist=[]
+for i in range(0,5):
+    number=int(input("Enter a number"))
+    mylist.append(number)
+delete=int(input("Enter a number to delete"))
+mylist.remove(delete)
+print(mylist)
+
+6) accept 5 numbers, store them inside the list. now accept a position from user ,remove the element from that position and  after removing it, display the list.
+
+mylist=[]
+for i in range(0,5):
+    number=int(input("Enter a number"))
+    mylist.append(number)
+position=int(input("Enter a number to delete"))
+mylist.pop(position)
+print(mylist)
+
+7) create a list and store string,number,character,boolean,decimal values respectively inside it.
+Now slice it in following ways:
+a) display it in reverse order
+b) list all the elements from 2nd position
+c) list the elements from 1st to 3rd position
+d) slice it from 1st to 3rd elements from the end.
+
+mylist=["vaibhav",2,'m',True,2.5]
+print(mylist[::-1]) #print in reverse order
+print(mylist[2:])
+print(mylist[1:4])
+print(mylist[-4:-1])
+
+8) Note: use List comprehension
+ create a list with the numbers from 1 to 20
+ create one more list which should contain only odd numbers from the first list.
+
+mylist = [i for i in range(1,20) if i%2!=0]
+print(mylist)
+
+9) accept 5 names and store them in list. Now sort the list in ascending order display and then in descending order.
+
+mylist=[]
+for i in range(0,5):
+    name=input("Enter a name")
+    mylist.append(name)
+print(mylist)
+mylist.sort()
+print(mylist)
+mylist.sort(reverse=True)
+print(mylist)
+
+
+
