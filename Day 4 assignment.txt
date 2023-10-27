@@ -1,0 +1,126 @@
+1) Write a Python program to count the elements in a list until an element is a tuple.
+mylist=[1,2,3,(4,5)]
+c=0
+for i in mylist:
+    if type(i)==tuple:
+        break
+    else:
+        c+=1
+print(c)
+
+2)#create a tuple to store 5 numbers and then sort it in ascending and descending order.
+
+mt=(3,6,8,9,1)
+print(sorted(mt))
+print(sorted(mt,reverse=True))
+
+3)Write a Python program to find the repeated items of a tuple.
+
+mt=(4,3,2,4,2,4)
+print(max(mt))
+repeated=0
+for i in range(len(mt)):
+    if mt.count(mt[i]>1):
+        print("Repeated",mt[i])
+
+part 2:set
+1)accept 10 values from user and add them inside the set. now accept one more value from user
+ and if it is present in the set, remove it. Make sure program doesn't give any error if number
+  is not there inside the set.
+myset=set({})
+for i in range(1,11):
+    value=int(input("Enter a value "))
+    myset.add(value)
+print(myset)
+value1=int(input("Enter another value"))
+if(value1 in myset) :
+    myset.discard(value1)
+print(myset)
+
+part 3: Dictionary
+
+1) accept 5 students name and store them in the dictionary by providing keys from 1 to 5 respectively.
+
+name1=input("Enter a name")
+name2=input("Enter a name")
+name3=input("Enter a name")
+name4=input("Enter a name")
+name5=input("Enter a name")
+
+dict={1:name1,2:name2,3:name3,4:name4,5:name5}
+print(dict)
+
+2)create a dictionary with pairs
+	soap:100
+	deo:300
+	perfume:400
+
+now accept a product name from user (in any case, so you have to handle "ignore case") and display its price. Also , if the product is not present in the dictionary display the error message " product not available "
+Note:  you should not get "KeyError:" in the program.
+dict={"soap":100,"deo":300,"perfume":400}
+print(dict)
+product=input("enter a product")
+if(product=="soap"):
+    print(dict["soap"])
+elif(product=="deo"):
+    print( print(dict["deo"]))
+
+elif(product=="perfume"):
+    print( print(dict["perfume"]))
+else:
+    print("product not available")
+
+3)'''
+1) accept 10 values from user and add them inside the set. now accept one more value from user
+ and if it is present in the set, remove it. Make sure program doesn't give any error if number
+  is not there inside the set.
+'''
+'''
+3) define a class "Student" with members
+	name,age,address and qualification
+	
+   define parameterized constructor and "str" member function which returns all the members
+
+   create 4 objects of Student by passing values.
+
+now create a dictionary with rollno ( start from 1 ) as a key and student object as a value.
+
+accept a rollno from user and display all its details i.e. name,age,address and qualification.
+also display message "student not found" in case if rollno entered by user is not available 
+as a key inside the dictionary.
+
+
+'''
+class student:
+    name="student name"
+    age="student age"
+    address="student address"
+    qualification="student qualification"
+    def __init__(self, name,qualification,age,address,):
+        self.name = name
+        self.qualification = qualification
+        self.age=age
+        self.address=address
+    def __str__(self):
+        return "My name is " +self.name + " " + "my qualification is" +self.qualification +" " + "my age is self.age and addrees is" + self.address
+
+s1=student("vaibhav","B.E",24,"jalgaon")
+s2=student("akshay","M.A",27,"jalgaon")
+s3=student("varun","B.E",27,"mumbai")
+s4=student("paresh","p.h.d",35,"pune")
+dict={1:s1,2:s2,3:s3,4:s4}
+rollnumber=input("Enter a number")
+
+if(rollnumber==1):
+    print(s1)
+elif(rollnumber==2):
+    print(s2)
+elif(rollnumber==3):
+    print(s3)
+elif(rollnumber==4):
+    print(s4)
+else:
+    print("student not found")
+
+
+
