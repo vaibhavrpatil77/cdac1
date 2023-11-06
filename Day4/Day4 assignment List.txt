@@ -1,0 +1,195 @@
+1)Write a Python program to find all the values in a list are greater than a specified number.
+mylist=[1,2,3,4,5,6,7,8,9,10]
+num=int(input("Enter a number"))
+list1=[]
+for i in mylist:
+    if i>num:
+        list1.append(i)
+print(list1)
+
+2) Write a Python program to find the list of words that are longer than n 
+
+list1=["apple", "banana", "cherry", "date", "elderberry"]
+list2=[]
+n=int(input("Enter a number"))
+for word in list1:
+    if len(word)>n:
+        list2.append(word)
+print(list2)
+
+
+3)Write a Python program to get the largest number from a list
+ml={1,2,5,8,10,12,4,2,3,5}
+print(max(ml))
+
+
+'''
+4) Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings.
+Sample List : ['abc', 'xyz', 'aba', '1221']
+'''
+l=['abc', 'xyz', 'aba', '1221']
+l1=[]
+count=0
+for i in l:
+    if(len(i)>=2 and i[0]==i[-1]):
+        count+=1
+print(count)
+
+
+5) Write a Python program to multiply all the items in a list.
+l={1,2,3,4,5,6}
+multiply=1
+for i in l:
+    multiply*=i
+print(multiply)
+
+6)write a Python program to print a specified list after removing the 0th, 4th and 5th elements.
+Sample List : ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+Expected Output : ['Green', 'White', 'Black'] """
+mylist = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+mylist.remove(mylist[0])
+mylist.remove(mylist[3])
+mylist.remove(mylist[3])
+print(mylist)
+7) Write a Python program to print the numbers of a specified list after removing even numbers from it.
+'''
+l=[1,2,3,4,5,6,7,8,9,10]
+listcopy=l.copy()
+for i in listcopy:
+    if(i%2==0):
+        listcopy.remove(i)
+print(listcopy)
+
+8)Write a Python program access the index of a list.
+	output : all the elements along with their index
+l=[1,2,3,4,5,6]
+print(l.index(1) ,l[1])
+print(l.index(2),l[2])
+print(l.index(3),l[3])
+print(l.index(4),l[4])
+print(l.index(5),l[5])
+#9) Write a Python program to check a list is empty or not
+list=[]
+print(list.count(list))
+if(list.count(list)==0):
+    print("list is empty")
+else:
+    print("list is not empty")
+#10) Write a Python program to check whether the n-th element exists in a given list.
+my_list = [10, 20, 30, 40, 50]
+n = 3(accepting last index as n)
+
+if n >= 0 and n < len(my_list):
+    print(f"The {n}-th element exists in the list.")
+else:
+    print(f"The {n}-th element does not exist in the list.")
+
+#11) Write a Python program to clone or copy a list
+list=[1,2,3,4,5]
+print(list)
+list1=list.copy()
+print(list1)
+#or using slicing
+list2=(list[:])
+print(list2)
+
+'''
+12) Write a Python program to convert list to list of dictionaries.
+Sample lists: ["Black", "Red", "Maroon", "Yellow"], ["#000000", "#FF0000", "#800000", "#FFFF00"]
+Expected Output: [{'color_name': 'Black', 'color_code': '#000000'}, {'color_name': 'Red', 'color_code': '#FF0000'}, {'color_name': 'Maroon', 'color_code': '#800000'}, {'color_name': 'Yellow', 'color_code': '#FFFF00'}]
+ '''
+list1=["Black", "Red", "Maroon", "Yellow"]
+list2=["#000000", "#FF0000", "#800000", "#FFFF00"]
+list3=[list1,list2]
+list_of_dict=[]
+for i in range(len(list1)):
+    dict1=list1[i]
+    dict2=list2[i]
+    dict={"color":dict1,"numbers":dict2}
+    list_of_dict.append(dict)
+print(list_of_dict)
+
+
+'''
+13) Write a Python program to find the index of an item in a specified list.
+ '''
+'''
+13) Write a Python program to find the index of an item in a specified list.
+ '''
+list=[1,2,3,4,5]
+num=int(input("Enter a number to find index"))
+try:
+    print(list.index(num))
+except ValueError:
+    print(f"{num} is not in a list enter a valid number")
+
+14) Write a Python program to insert a given string at the beginning of all items in a list. 
+Sample list : [1,2,3,4], string : emp
+Expected output : ['emp1', 'emp2', 'emp3', 'emp4']
+'''
+14) Write a Python program to insert a given string at the beginning of all items in a list.
+Sample list : [1,2,3,4], string : emp
+Expected output : ['emp1', 'emp2', 'emp3', 'emp4']
+ '''
+list=[1,2,3,4]
+insersting="emp"
+new_list=[insersting+str(i) for i in list]
+print(new_list)
+
+
+ 
+15) Write a Python program to iterate over two lists simultaneously.
+ '''
+mylist1=[1,2,3,4,5]
+mylist2=[6,7,8,9,10]
+for i in zip(mylist1,mylist2):
+    print(i)
+
+
+#zip function is used to iterate over a two list simultaneously it takes two list as an arugment
+#for iterating two list simultaneously we have zip function also
+for item1,item2 in zip(mylist1,mylist2):
+    print(f"mylist1 element is {item1},mylist2 element is {item2}")
+16) Write a Python program to print a nested lists (each list on a new line) using the print() function.
+ '''
+list1=[1,2,3,[10,20,30,40,50],4,5]
+print(list1[3])
+for i in range(0,5):
+    print(list1[3][i])
+17) Write a Python program to remove duplicates from a list.
+ '''
+import re
+list1=[1,2,3,4,3,2,1,2,5,4]
+new_list=[]
+for item in list1:
+    if item not in new_list:
+        new_list.append(item)
+print(new_list)
+#using set to remove duplicate values
+list1=[1,2,3,4,3,2,1,2,5,4]
+set1=set(list1)
+list2=list(set1)
+print(list2)
+
+18) Write a Python program to replace the last element in a list with another list. 
+Sample data : [1, 3, 5, 7, 9, 10], [2, 4, 6, 8]
+Expected Output: [1, 3, 5, 7, 9, 2, 4, 6, 8]
+list1=[1, 3, 5, 7, 9, 10]
+list2=[2, 4, 6, 8]
+list1[5]=list2
+print(list1)
+
+
+19) Write a Python function that takes two lists and returns True if they have at least one common member.
+
+ '''
+def fun1(list1,list2):
+    for item in list1:
+        if item in list2:
+            return True
+    return False
+
+list1=[1,2,3,4,5]
+list2=[6,7,5,8,9]
+t=fun1(list1,list2)
+print(t)

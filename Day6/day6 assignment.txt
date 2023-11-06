@@ -1,0 +1,200 @@
+
+1) Create a multi-level inheritance , override default constructors in the child classes , instantiate the child class and show how will u invoke parent class constructor from child class ?
+class base:
+    def __init__(self):
+        print("base class constructor gets called")
+
+class sub(base):
+    def __init__(self):
+        super().__init__()  # Invoke the parent class constructor
+        print("sub class constructor gets called")
+
+s1 = sub()
+
+2)'''
+2) create a class "Vehicle", define a method "public void start()" in it.
+From this class derive a class FourWheeler. How will u override "start()" method of parent class ?
+'''
+class Vehicle :
+    def start(self):
+        print("veichle gets started")
+class FourWheeler(Vehicle):
+    def start(self):
+        print("fourwheeler gets started")
+        super().start()
+def perform(obj):
+    obj.start()
+f=FourWheeler()
+perform(f)
+
+3)'''
+3) Go for Hierarchical inheritance, create instances of child class and observe constructor
+ invocation.
+'''
+'''
+3) Go for Hierarchical inheritance, create instances of child class and observe constructor
+ invocation.
+'''
+class Employee:
+    def __init__(self):
+        print("Employee init method get called")
+class Manager(Employee):
+    def __init__(self):
+        super().__init__()
+        print("Manager init method get called")
+class DeputyManager(Employee):
+    def __init__(self):
+        super().__init__()
+        print("Deputy Manager init  get called")
+class Executive(Employee):
+    def __init__(self):
+        super().__init__()
+        print("Executive init get called")
+e=Executive()
+d=DeputyManager()
+e=Executive()
+
+'''
+4) Create a class "Top1" with "disp1()" method.
+From this class Derive "Bottom1", "Bottom2" and "Bottom3" classes ,override the "disp1()".
+create a function "perform" which can take argument as object of any child class.
+Now show how will u achieve dynamic polymorphism.
+
+'''
+class Top1:
+    def disp(self):
+        print("Top1 disp gets called")
+class Bottom1(Top1):
+    def disp(self):
+        print("Bottom1 disp gets called")
+class Bottom2(Top1):
+    def disp(self):
+        print("Bottom2 disp gets called")
+class Bottom2(Top1):
+    def disp(self):
+        print("Bottom2 disp gets called")
+class Bottom3(Top1):
+    def disp(self):
+        print("Bottom3 disp gets called")
+def perform(object):
+    object.disp()
+perform(Bottom1())
+perform(Bottom2())
+perform(Bottom3())
+
+5) create Base class and Sub class with parameterized constructors. Show how will you invoke
+ Base class parameterized constructor from Sub class.
+'''
+class Base:
+    def __init__(self ,num):
+        self.num=num
+        print("Base class init method getcalled",self.num)
+class sub(Base):
+    def __init__(self,num1):
+        self.num1=num1
+        super().__init__(100)
+        print("sub class init method get called",self.num1)
+s=sub(50)
+
+part2: Isinstance of method question
+create a hierarchy
+
+1)				Course
+
+					void start()
+					void end()
+
+override "start()" and "end()" in all the child classes.
+
+		MsCit		Basic		Dbda
+							void orientation()
+
+
+
+write a function "perform"
+
+	perform function should be defined in such a way that it can accept any course and invoke "start()" and "end()" functions.
+
+	also make sure if "Dbda" is passed , its "orientation()" method also should be called.
+
+'''
+'''
+class Course:
+    def start(self):
+        print("course start")
+    def end(self):
+        print("course end")
+class MSCIT:
+    def start(self):
+        print("MSCIT course gets  start")
+    def end(self):
+        print("MSCIT course  gets end")
+class Basic:
+    def start(self):
+        print("Basic course gets  start")
+    def end(self):
+        print("Basic course  gets end")
+class DBDA:
+    def start(self):
+        print("DBDA course gets  start")
+    def end(self):
+        print("DBDA course  gets end")
+    def orientation(self):
+        print("DBDA course orientation completed")
+def perform(ref):
+    if isinstance(ref,DBDA):
+        ref.orientation()
+
+    ref.start()
+    ref.end()
+perform(MSCIT())
+perform(Basic())
+perform(DBDA())
+
+
+2)create a hierarchy
+
+				Animal
+
+					void makeSound()
+					
+override "makeSound()" in all the child classes.
+
+		Dog		Cat		Tiger
+							void hunting()
+
+
+
+define perform function.
+
+	perform function should be defined in such a way that it can accept any animal and invoke "makeSound()" function.
+
+	also make sure if "Tiger" is passed , its "hunting()" method also should be called.
+'''
+'''
+class Animal:
+    def makeSound(self):
+        print("Animal makesound")
+class Tiger(Animal):
+    def makeSound(self):
+        print("Tiger makesound")
+    def Hunt(self):
+        print("Tiger is hunting")
+class Dog(Animal):
+    def makeSound(self):
+        print("Dog makesound")
+class Cat(Animal):
+    def makeSound(self):
+        print("Cat makesound")
+def perform(ref):
+    if isinstance(ref,Tiger):
+        ref.Hunt()
+    ref.makeSound()
+perform(Tiger())
+perform(Cat())
+perform(Dog())
+
+
+
+
+

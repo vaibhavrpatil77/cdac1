@@ -1,0 +1,40 @@
+Q1)create a package "mypack". inside this package, create:
+	voting.py [module]
+inside this module create:
+
+
+class VotingNotAllowedException as a user defined exception class
+	and
+	
+
+class Voter with
+name and age
+parameterized constructor will accept name ,age and check if the age is not >=18 , it will raise "VotingNotAllowedException"
+
+
+Now create Python application which will instantiate "Voter" class and handle the exception.
+
+
+import Voter
+class VotingNotAllowedException(Exception):
+    pass
+import VotingNotAllowedException
+class Voter:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        if age<=18:
+            raise VotingNotAllowedException("your age is less than 18 not allowed to vote")
+        else:
+            print("you can vote")
+import traceback
+import  Voter
+import VotingNotAllowedException
+class Application:
+    try:
+            v=Voter.Voter("vaibhav",17)
+    except Exception as e:
+            stac_tarcce=traceback.format_exc()
+            print(stac_tarcce)
+        
+       

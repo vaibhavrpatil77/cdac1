@@ -1,0 +1,108 @@
+1) Write a Python program to get a string from a given string where all occurrences of its first char 
+have been changed to '$', except the first char itself. 
+Sample String : 'restart'
+Expected Result : 'resta$t'
+
+str1 = "restart"
+first_char = str1[0]
+modified_str = first_char + str1[1:].replace(first_char, '$')
+print(modified_str)
+
+2) Write a Python program to add 'ing' at the end of a given string (length should be at least If the given string already ends with 'ing' then add 'ly' instead. If the string length of the given string is less than 3, 
+leave it unchanged. 
+Sample String : 'abc'
+Expected Result : 'abcing'
+Sample String : 'string'
+Expected Result : 'stringly'
+str1 = "dgdjshabc"
+str2 = str1[-3:]  # Get the last 3 characters
+
+if str2 == "abc":
+    str3 = str1[:-3] + "ly"  # Replace "abc" with "ly"
+else:
+    str3 = str1  # Keep the original string
+
+print(str3)
+
+3) Write a Python program to calculate the length of a string.
+	[ without any inbuilt function ]
+
+string1 = "Hello"
+length = 0
+
+for char in string1:
+    length += 1
+
+print(length)
+
+4) Write a Python program to count the number of characters (character frequency) in a string. 
+Sample String : google.com'
+
+expected result:
+{'g': 2, 'o': 3, 'l': 1, 'e': 1, '.': 1, 'c': 1, 'm': 1}
+
+char_count={}
+sample="hello"
+# Iterate through the string
+for char in sample:
+        # Check if the character is already in the dictionary 
+    if char in char_count:
+        char_count[char]+=1
+    else:
+        char_count[char]=1
+
+print(char_count)
+
+5) Write a Python program to get a string made of the first 2 and the last 2 chars from a given a string. If the string length is less than 2, return the same string instead of the empty string
+
+string1="helloworld"
+# Check if the string is less than 2 characters long
+if len(string1)<2:
+    result=string1
+else:
+    str1=(string1[0:2])
+    str2=(string1[8:])
+    result=str1+str2
+print(result)
+
+6) Write a Python program to get a single string from two given strings, separated by a space and swap the first two characters of each string. 
+Sample String : 'abc', 'xyz'
+Expected Result : 'xyc abz'
+
+'''
+
+6) Write a Python program to get a single string from two given strings, separated by a space and swap the first two characters of each string.
+Sample String : 'abc', 'xyz'
+Expected Result : 'xyc abz'
+'''
+import re
+str1 = "abc"
+str2 = "xyz"
+# Two given strings
+string1 = 'abc'
+string2 = 'xyz'
+
+# Swap the first two characters of each string
+newstring = string1[:2] + string2[2:]
+newstring1 = string2[:2] + string1[2:]
+
+# Concatenate the swapped strings with a space in between
+result = newstring + ' ' + newstring1
+
+# Print the expected result
+print(result)
+
+
+# Check if both strings have at least 2 characters
+if len(str1) >= 2 and len(str2) >= 2:
+    # Swap the first two characters of each string
+    swapped_str1 = str2[:2] + str1[2:]
+    swapped_str2 = str1[:2] + str2[2:]
+    result = swapped_str1 + " " + swapped_str2
+else:
+    # If either string has less than 2 characters, return them as is
+    result = str1 + " " + str2
+
+print(result)
+
+

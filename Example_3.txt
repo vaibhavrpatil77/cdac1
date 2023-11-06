@@ -1,0 +1,26 @@
+def outer():
+    num=100
+    def inner():     # it's a closure
+        print("inside inner function\t",num)
+    num=400
+    print("inside outer function")
+    return inner
+
+var1=outer()
+var1()
+
+example 4
+
+var=1000
+def outer():
+    num=100
+    def inner():     # it's a closure
+        val=50
+        print("inside inner function\t",var)
+        print(val)
+    num=400
+    print("inside outer function")
+    return inner
+
+var1=outer()
+var1()

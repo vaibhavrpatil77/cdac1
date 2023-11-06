@@ -1,0 +1,81 @@
+'''
+1) define a class Sample with
+	data as instance member
+	init which takes one parameter in order to initialize "data"
+
+make sure following things are possible
+
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+s5=s4-s1+s3*s2
+
+print(s5)   #  ans should be  45
+'''
+class Sample:
+    def __init__(self,data):
+        self.data=data
+        print("data value is",data)
+    def __add__(self,obj):
+        return Sample(self.data + obj.data)
+    def __sub__(self,obj):
+       return Sample( self.data - obj.data)
+    def __mul__(self,obj):
+        return Sample(self.data * obj.data)
+    def __str__(self):
+        return str(self.data)
+s1=Sample(7)
+s2=Sample(5)
+s3=Sample(8)
+s4=Sample(12)
+
+s5 = s4 - s1 + s3 * s2
+print(s5)
+
+print(s5)
+
+2) define a class MyClass with
+	x as instance member
+	init which takes one parameter in order to initialize "x"
+
+create two instances by passing numbers.
+
+now check :
+
+> , < , == on these instances
+
+'''
+2) define a class MyClass with
+	x as instance member
+	init which takes one parameter in order to initialize "x"
+
+create two instances by passing numbers.
+
+now check :
+
+> , < , == on these instances
+
+
+
+'''
+
+class MyClass:
+    def __init__(self,x):
+        self.x=x
+        print("value of x",x)
+    def __lt__(self,obj):
+        return self.x < obj.x
+    def __gt__(self,obj):
+        return self.x > obj.x
+    def __eq__(self,obj):
+        return (self.x == obj.x)
+m1= MyClass(7)
+m2= MyClass(10)
+m3= MyClass(15)
+m4 = m1 < m2 and m2 == m3
+print(m4)
+
+print(m4)
+

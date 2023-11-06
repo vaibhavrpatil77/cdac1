@@ -1,0 +1,167 @@
+
+#1) create a list, accept 5 numbers , store them in the list and finally convert that list to numpy array.
+import numpy as ny
+mylist=[]
+for i in range(0,5):
+    num=int(input("enter a number"))
+    mylist.append(num)
+print(mylist)
+arr=ny.array(mylist)
+print("array is ",arr)
+
+#2) create numpy array of 5 numbers and print their sum
+import numpy as ny
+arr=ny.array([1,2,3,4,5])
+sum=0
+for i in range(0,arr.__len__()):
+    sum+=i
+print(sum)
+#3) create numpy double dimension array of 3*3 to store your initial and display them in a tabular form.
+import numpy as ny
+arr=ny.array([[10,20,30],[40,50,60],[70,80,90]])
+print(arr)
+for j in arr:
+    print(j)
+4) create one-d numpy array of 12 elements , accept 12 numbers and display them. Now convert this one-d array into (4*3) two-d array and display it in a tabular form.
+# 4) create one-d numpy array of 12 elements , accept 12 numbers and display them.
+# Now convert this one-d array into (4*3) two-d array and display it in a tabular form.
+import numpy as ny
+
+arr=ny.arange(12)
+for i in arr:
+        arr[i]=int(input("Enter a number"))
+print(arr)
+arr=arr.reshape(4,3)
+print(arr)
+for i in range(0,arr.__len__()):
+        for j in range(0,arr[i].__len__()):
+                print(arr[i][j],end=" ")
+        print()
+#5) create two double dimension array and arrange (stack) them using "axis=0" "axis=1" and  "axis=2".
+import numpy as np
+arr1=np.array([[1,2,3,4,5],[6,7,8,9,10]])
+arr2=np.array([[11,12,13,14,15],[16,17,18,19,20]])
+arr3=np.stack((arr1,arr2),axis=0)
+print(arr3)
+arr4=np.stack((arr1,arr2),axis=1)
+print(arr4)
+'''
+6) create two one-d arrays and then find out:
+	a) common elements of both the array
+	b) unique elements of first array
+	c) unique elements of second array
+'''
+from numpy import *
+arr1=array([1,2,3,4,5])
+arr2=array([6,7,5,2,3,10])
+arr3=intersect1d(arr1,arr2)
+print(arr3)
+uniqueelement_arr1=setdiff1d(arr1,arr2)
+print(uniqueelement_arr1)
+uniqueelement_arr2=setdiff1d(arr2,arr1)
+print(uniqueelement_arr2)
+
+
+#7) accept no.of rows and no. of cols from the user , create two-d array accordingly. Now calculate the sum as per "axis=0" and "axis=1"
+import numpy as np
+import numpy as ny
+rows=int(input("Enter number of rows"))
+column=int(input("Enter number of colum"))
+arr=np.zeros((rows,column),dtype=int)
+for i in range(rows):
+    for j in range(column):
+        num = int(input(f"Enter element at position ({i}, {j}): "))
+        arr[i][j] = num
+print(arr)
+arr1=np.sum((arr),axis=1)
+print(arr1)
+arr2=np.sum((arr),axis=0)
+print(arr2)
+
+#8) declare two 2d arrays and calculate the sum as per "axis=0" "axis=1" and "axis=2"
+import numpy as np
+arr1=np.array([[10,20,30],[40,50,60]])
+arr2=np.array([[70,80,90],[100,110,120]])
+arr3=np.sum((arr1,arr2),axis=0)
+print(arr3)
+arr4=np.sum((arr1,arr2),axis=1)
+print(arr4)
+arr5=np.sum((arr1,arr2),axis=2)
+print(arr5)
+'''
+'''
+'''
+9) create two-d array ,display it. Now accept a number from user and perform all
+ arithmetic operations on each and every element of the array using that number.
+'''
+from numpy import *
+first=array([[1,2,3,4,5],[10,20,30,40,50]])
+print(first)
+number=int(input("enter a number"))
+
+result = first + number  # Addition
+print("After Addition")
+print(result)
+result = first - number  # Subtraction
+print("After substraction")
+print(result)
+result = first * number  # Multiplication
+print("After Multiplication")
+print(result)
+result = first / number
+print("after division")
+print(result)
+
+10) accept start, end and how many numbers to be generated and then using
+"linspace" create numpy array.
+'''
+import numpy as ny
+start=int(input("number to start"))
+stop=int(input("number to end"))
+numbers=int(input("Enter a number"))
+
+first=ny.linspace(start,stop,numbers)
+print(first)
+print(type(first))
+
+11) create one-d array of 8 numbers and then using "slicing" concept,
+	a) print numbers from 1 to 4
+	b) print all the numbers from 3rd position
+	c) print last 3 numbers
+'''
+import numpy as np
+arr=np.array([1,2,3,4,5,6,7,8])
+f=arr[1:5]
+print(f)
+s=arr[3:]
+print(s)
+l=arr[5:8]
+print(l)
+'''
+'''
+12) create 2 d array (4*3) with following values:
+[[10,20,30,40],[50,60,70,80],[90,100,110,120]]
+
+now using array slicing concept display following values
+	a) display   50  60  70  80
+	b) display 100 and 110
+	c) display 30 70 and 110
+	d) display 50  60  90 and 100
+'''
+import numpy as np
+
+arr=np.array([[10,20,30,40],[50,60,70,80],[90,100,110,120]])
+print(arr)
+a=arr[1,]
+print(" a is ")
+print(a)
+b=arr[2,1:3]
+print("b is")
+print(b)
+c=arr[0:3,2:3]
+print("c is")
+print(c)
+d=arr[1:3,0:2]
+print("d is")
+print(d)
+
