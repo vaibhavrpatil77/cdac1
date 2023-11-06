@@ -1,0 +1,131 @@
+1) define 3 functions "add()","modify()" and "delete()" with just a print message.
+now accept input from user as a number. if the number entered is 1, call "add()"
+if it is 2, call "modify()" if it is 3, call "delete()" [ hint: use "match... case" ]
+def add():
+    print("add get called")
+def modify():
+    print("modify get called")
+def delete():
+    print("delete get callled")
+num=int(input("Enter a number"))
+match num:
+    case 1:
+        add()
+    case 2:
+        modify()
+    case 3:
+        delete()
+2) define a function which accepts a number and return its square.
+
+def sqr( num):
+ return num*num
+num=int(input("enter a number"))
+square=sqr(num)
+print(square)
+
+3)define a function which accepts character,int,string and display them.
+def display(num,ch,str):
+    print(num);
+    print(ch);
+    print(str)
+display(2)
+display(2,'A')
+display(3,'A',"vaibhav")
+
+4) define "myfun1()" with a print statement. now define "myfun2()" which should invoke "myfun1()" function. 
+invoke myfun2()
+def myfun1():
+    print("inside myfun1")
+def myfun2():
+    print("inside myfun2")
+    myfun1()
+myfun2()
+
+
+5) define a function to accept a number. This function should return 1 if a number passed is more than 0
+return -1 if a number passed is less than 0 , else it should return 0.def acceptnum(num):
+    if(num>0):
+        return 1
+    else :
+        return -1
+num=int(input("Enter a number")  )
+
+num2=acceptnum(num)
+print(num2)
+
+6) define a function which accepts a character and return toggle of it. 
+def accept(ch):
+
+     if(ord(ch)>=65 and ord(ch)<90):
+
+          return(ch.lower())
+     else:
+
+           return(ch.upper())
+char=input("accept a character")
+chr=accept(char)
+print(chr)
+
+7) define a function which accepts a string , toggle and return it.
+	[ hint :  use "swapcase()" function of string ]
+def fun1(*arg):
+    for i in arg:
+        return(i)
+val1= fun1("vaibhav")
+print(val1)
+val2=fun1('a')
+print(val2)
+
+8) write a function to accept minimum 3 characters and maximum 5 characters. 
+ 	[ use default arguments method ]
+def fun1(*arg):
+    for i in arg:
+        print(i)
+fun1('v','a','b','c','d')
+
+fun1('a','b','c')
+
+9) define a function in such a way that it can accept n number of values and print their sum. [ variable number of arguments]
+
+sum=0
+def fun1(*var):
+    sum=0
+    for i in var :
+
+        sum=sum+i
+    print(sum)
+fun1(1,2,3,4,5,6)
+
+part 2:
+
+1) create 3 functions "show1()","show2()" and "show3()"
+now define a function "caller" in such a way that it can accept any function as an argument and invoke the same.
+
+invoke caller function by passing show1,show2 and show3
+def fun1(fun,fun2,fun3):
+    fun()
+    fun2()
+    fun3()
+def show1():
+  print("show1 get called")
+def show2():
+  print("show2 get called")
+def show3():
+  print("show3 get called")
+  return fun1()
+val1=fun1(show1,show2,show3)
+val1()
+
+2)define nested function and show how will you invoke it.
+
+def outer():
+    print("outer get called")
+    def inner():
+        print("inner get called")
+    return inner()
+o=outer()
+o()
+
+
+
+
